@@ -14,9 +14,11 @@ Connct:
     PD1    ---> SWDCL
     PB2    ---> XRES (or RESET)
     GND    ---> GND
-    3.3V   ---> VCC
+    3.3V   ---> VCC (Don't connect for the BlinkyBall)
 ```
-This will power the target as 3.3V from the FX2LP board. Pleas make sure there is no other power connected to the target as the FX2LP device is not 5V tollerant.
+This will power the target as 3.3V from the FX2LP board. Please make sure there is no other power connected to the target as the FX2LP device is not 5V tolerant.
+
+For the RGB BlinkyBall make sure it is powered from the USB cable, as it runs at 3.3V and is safe to.
 
 Use the PC software to flash a .hex file to the target.
 
