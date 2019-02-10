@@ -26,6 +26,6 @@ Limitations:
 
 Building the software:
 
-There is a windows PC project for visual studio 2010. Multiplatform support requires libusb.
+There is a windows PC project for visual studio 2017. Multiplatform support requires libusb.
 
 The device software needs the Keil PK51 toolchain. There is a compiled binary swd.iic you can use as well.
