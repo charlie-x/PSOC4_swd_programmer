@@ -14,9 +14,11 @@ Connct:
     PD1    ---> SWDCL
     PB2    ---> XRES (or RESET)
     GND    ---> GND
-    3.3V   ---> VCC
+    3.3V   ---> VCC (Don't connect for the BlinkyBall)
 ```
-This will power the target as 3.3V from the FX2LP board. Pleas make sure there is no other power connected to the target as the FX2LP device is not 5V tollerant.
+This will power the target as 3.3V from the FX2LP board. Please make sure there is no other power connected to the target as the FX2LP device is not 5V tolerant.
+
+For the RGB BlinkyBall make sure it is powered from the USB cable, as it runs at 3.3V and is safe to.
 
 Use the PC software to flash a .hex file to the target.
 
@@ -26,6 +28,8 @@ Limitations:
 
 Building the software:
 
-There is a windows PC project for visual studio 2010. Multiplatform support requires libusb.
+There is a windows PC project for visual studio 2017. Multiplatform support requires libusb. 
+
+There is also a prebuilt .exe
 
 The device software needs the Keil PK51 toolchain. There is a compiled binary swd.iic you can use as well.
