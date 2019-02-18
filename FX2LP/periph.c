@@ -31,6 +31,7 @@ void TD_Init(void)
    Rwuen = TRUE;       
    CPUCS=((CPUCS & ~bmCLKSPD) | bmCLKSPD1);
    IFCONFIG |=0x40;
+	 PORTACFG &=00;
 }
 
 void TD_Poll(void)             // USB空闲的时候循环调用

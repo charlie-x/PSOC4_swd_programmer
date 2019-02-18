@@ -1,16 +1,30 @@
 #ifndef __SWD_PHYSICALLAYER_H
 #define __SWD_PHYSICALLAYER_H
 
-#define SWDIO_PRT       IOD
-#define SWDIO_PIN       IOD_0
-#define SWDIO_PRT_CTL   OED
+//SMALL LA with the improperly wired 245
+// PB0 N/A 
+// PB1 Y (CH0)
+// PB2 Y (CH1)
+// PB3 Y (CH2)
+
+// PB4 Y (CH5)
+// PB5 Y (CH6)
+// PB6 Y (CH7)
+// PB7 Y (CH3)
+
+// was PD0
+#define SWDIO_PRT       IOB
+#define SWDIO_PIN       IOB_0
+#define SWDIO_PRT_CTL   OEB
 #define SWDIO_PIN_NO    0
 
-#define SWDCK_PRT       IOD
-#define SWDCK_PIN       IOD_1
-#define SWDCK_PRT_CTL   OED
+// was PD1
+#define SWDCK_PRT       IOB
+#define SWDCK_PIN       IOB_1
+#define SWDCK_PRT_CTL   OEB
 #define SWDCK_PIN_NO    1
 
+// was PB2
 #define XRES_PRT        IOB
 #define XRES_PIN        IOB_2
 #define XRES_PRT_CTL    OEB

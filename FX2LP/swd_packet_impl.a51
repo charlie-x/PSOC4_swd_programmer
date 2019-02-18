@@ -2,14 +2,18 @@
 
 OED     DATA    0B5H
 IOD     DATA    0B0H
-SWDIO   BIT     IOD.0
-SWDCL   BIT     IOD.1
+	
+OEB     DATA    0B3H
+IOB     DATA    090H
+	
+SWDIO   BIT     IOB.0
+SWDCL   BIT     IOB.1
 
 ?PR?_Swd_SendByte SEGMENT CODE
         PUBLIC  _Swd_SendByte
 		PUBLIC  Swd_SendByte
         RSEG    ?PR?_Swd_SendByte
-		USING   0
+		USING   0 
 _Swd_SendByte:
 Swd_SendByte:
         CLR     A
@@ -50,9 +54,9 @@ Swd_ReceiveByte:
 		USING   0
 _Swd_FirstTurnAroundPhase:
 Swd_FirstTurnAroundPhase:
-        MOV     A, OED
-        ANL     A, #0FEH
-        MOV     OED, A        ; SWDIO is now input
+        MOV     A, OEB
+        ANL     A, #011111110B
+        MOV     OEB, A        ; SWDIO is now input
         CLR     SWDCL
         SETB    SWDCL
         RET
@@ -64,9 +68,9 @@ Swd_FirstTurnAroundPhase:
 		USING   0
 _Swd_SecondTurnAroundPhase:
 Swd_SecondTurnAroundPhase:
-        MOV     A, OED
+        MOV     A, OEB
         ORL     A, #1
-        MOV     OED, A        ; SWDIO is now output
+        MOV     OEB, A        ; SWDIO is now output
         CLR     SWDCL
         SETB    SWDCL
         RET
